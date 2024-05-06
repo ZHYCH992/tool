@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>节流 throttle</title>
+	</head>
+	<style>
+		#Content {
+			width: 800px;
+			height: 300px;
+			border: 1px solid #000;
+			overflow-y: auto;
+		}
+	</style>
+	<body>
+		<div class="buttonBar">
+			<button id="btn">节流函数</button>
+			<button id="btn2">普通函数</button>
+		</div>
+		<div id="Content"></div>
+	</body>
+	<script type="module">
+		import throttle from './../index.js';
+		const content = document.querySelector('#Content');
+		const clickFun = text => {
+			const p = document.createElement('p');
+			p.innerHTML = `<p>${text}执行</p>`;
+			content.appendChild(p);
+			content.scrollTop = content.scrollHeight;
+		};
+		let delay = 3000;
+		let buttonDebounce = null;
+		let buttonDelay = delay;
+		const button = document.querySelector('#btn');
+		const button2 = document.querySelector('#btn2');
+		//按钮倒计时
+		button.addEventListener('click', () => {
+			if (buttonDebounce) {
+				return;
+			}
+			buttonDebounce = setInterval(() => {
+				if (buttonDelay <= 0) {
+					clearInterval(buttonDebounce);
+					buttonDelay = delay;
+					buttonDebounce = null;
+					button.innerHTML = `节流函数`;
+					return;
+				}
+				buttonDelay = buttonDelay - 10;
+				button.innerHTML = `节流函数(${buttonDelay})`;
+			}, 10);
+		});
+		button.addEventListener('click', throttle({ fn: () => clickFun('节流函数'), wait: delay }));
+		button2.addEventListener('click', () => clickFun('普通函数'));
+	</script>
+</html>

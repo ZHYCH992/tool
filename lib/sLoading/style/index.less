@@ -1,0 +1,20 @@
+@import './../../theme.less';
+@import './flippers.less';
+
+#zLoading {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    var(--colorPrimary),
+    var(--colorSubPrimary)
+  );
+  transition: opacity 1s ease-in-out;
+  &.hiden {
+    opacity: 0;
+  }
+}

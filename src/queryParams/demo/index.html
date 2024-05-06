@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>获取 URL 参数 queryParams</title>
+	</head>
+	<style>
+		#Content {
+			width: 800px;
+			height: 300px;
+			border: 1px solid #000;
+			overflow-y: auto;
+		}
+	</style>
+	<body>
+		<div class="buttonBar">
+			<p>
+				参数名称：
+				<input id="addkey" onchange="" type="text" />
+				参数值：
+				<input id="addvalue" type="text" />
+				<button id="addbtn">增加参数</button>
+			</p>
+			<p>
+				参数名称：
+				<input id="changekey" type="text" />
+				参数值：
+				<input id="changevalue" type="text" />
+				<button id="changebtn">修改参数</button>
+			</p>
+			<p>
+				参数名称：
+				<input id="deletekey" type="text" />
+				<button id="deletebtn">删除参数</button>
+			</p>
+			<p>
+				参数名称：
+				<input id="getkey" type="text" />
+				<button id="getbtn">获取参数</button>
+			</p>
+		</div>
+		<div id="Content"></div>
+	</body>
+	<script type="module">
+		import queryParams from './../index.js';
+		const urlQuery = queryParams();
+		let addKey, addValue, changekey, changevalue, deletekey, getkey;
+		// const addKey = document.querySelector('#addkey');
+		// const addValue = document.querySelector('#addvalue');
+		// const addBtn = document.querySelector('#addbtn');
+		// const changekey = document.querySelector('#changekey');
+		// const changevalue = document.querySelector('#changevalue');
+	</script>
+</html>
