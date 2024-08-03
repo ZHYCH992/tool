@@ -1,6 +1,9 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/tool/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/tool/' : '/',
+  outputPath: 'docDist',
   themeConfig: {
     name: 'SToolchain',
     nav: {
@@ -22,11 +25,9 @@ export default defineConfig({
     prefersColor: { default: 'light', switch: true },
     lastUpdated: true,
   },
-
   legacy: {
     buildOnly: true, //只在构建生效
     checkOutput: true, //每次构建结束后将自动运行 es-check 检查产物 .js 文件的语法是否为 es5 格式。
     nodeModulesTransform: false, //取消对 node_modules 的转换
   },
-  outputPath: 'docDist',
 });

@@ -1,0 +1,9 @@
+/dist
+*.yaml
+*.json
+*.md
+*.log
+*.lock
+*.yml
+*.yaml
+*.lock

@@ -3,18 +3,23 @@ import { defineConfig } from 'father';
 export default defineConfig({
   umd: {
     name: 'SToolchain.min.js',
-    entry: 'src/index.js',
-    output: 'dist',
     platform: 'browser',
     extractCSS: true,
+    entry: 'src/index.umd.js',
   },
   cjs: {
-    output: 'lib',
+    output: 'dist/cjs',
     ignores: ['src/**/demo/**', 'src/index.umd.js'],
+    input: 'src',
+    platform: 'node',
+    transformer: 'esbuild',
   },
   esm: {
-    output: 'esm',
+    output: 'dist/esm',
     ignores: ['src/**/demo/**', 'src/index.umd.js'],
+    input: 'src',
+    platform: 'browser',
+    transformer: 'babel',
   },
   extraBabelPresets: [],
   extraBabelPlugins: [
