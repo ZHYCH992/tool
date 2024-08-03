@@ -1,5 +1,7 @@
 import debounce from './debounce';
+import './index.less';
 import queryParams from './queryParams';
+import sClone from './sClone/index.js';
 import sCookie from './sCookie';
 import sLoading from './sLoading';
 import sLocalStorage from './sLocalStorage/index.js';
@@ -13,3 +15,4 @@ window.sCookie = sCookie;
 window.queryParams = queryParams;
 window.sLoading = sLoading;
 window.websiteContext = websiteContext;
+window.sClone = sClone;
