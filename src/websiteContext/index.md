@@ -1,10 +1,10 @@
 ---
 category: Components
-title: 站点上下文 websiteContext
+title: 站点上下文 webSiteContext
 toc: content
 order: 10
 group:
-  title: Utils
+  title: 网站群
 ---
 
 ## 何时使用
@@ -17,10 +17,7 @@ group:
 ### 浏览器环境
 
 ```js
-
+const context = websiteContext();
+console.log(context);
+//{siteId: '2', columnId: '1', path: '/_upload/tpl/0b/59/2905/template2905/'}
 ```
-
-### API
-
-| 名称 | 类型 | 默认值 | 说明 |
-| ---- | ---- | ------ | ---- |

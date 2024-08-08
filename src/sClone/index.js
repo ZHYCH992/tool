@@ -1,8 +1,8 @@
-let sClone;
+let clone;
 if (structuredClone) {
-  sClone = structuredClone;
+  clone = structuredClone;
 } else {
-  sClone = (data) => {
+  clone = (data) => {
     let cloneObj = (obj) => {
       if (obj === null) {
         return null;
@@ -18,11 +18,11 @@ if (structuredClone) {
           if (obj[k] === null) {
             newObj[k] = null;
           } else if (typeof obj[k] === 'object' && !obj[k].nodeType) {
-            newObj[k] = sClone(obj[k]);
+            newObj[k] = clone(obj[k]);
             if (obj[k] instanceof Array) {
               let newArray = [];
               for (let i of obj[k]) {
-                newArray.push(sClone(i));
+                newArray.push(clone(i));
               }
               newObj[k] = newArray;
             }
@@ -41,4 +41,4 @@ if (structuredClone) {
   };
 }
 
-export default sClone;
+export default clone;

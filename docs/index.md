@@ -6,7 +6,7 @@ hero:
     - text: 开始使用
       link: /components
     - text: 立即下载 v1.0.0
-      link: /
+      link: /log
 features:
   - title: 开箱即用
     emoji: 💎

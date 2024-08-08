@@ -10,6 +10,7 @@
   --offset: 0.25;
   --size: 1em;
   --perspective: calc(2 * var(--size));
+  --color:var(--colorPrimary);
   height: var(--size);
   display: grid;
   grid-template-columns: repeat(var(--no-of-el), var(--size));
@@ -23,7 +24,7 @@
     });
     animation: flippers calc((var(--no-of-el) * var(--offset)) * 1s)
       calc(var(--delay) * 1s) infinite ease;
-    background-color: var(--colorPrimary);
+    background-color: var(--color);
   }
   @keyframes flippers {
     0% {

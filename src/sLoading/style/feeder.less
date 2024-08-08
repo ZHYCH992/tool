@@ -17,7 +17,7 @@
     animation-name: fed;
     animation-fill-mode: backwards;
     animation-delay: calc(var(--delay) * 1s);
-    background-color: $color;
+    background-color: var(--color);
     border-radius: 100%;
     height: 100%;
     position: absolute;
@@ -27,9 +27,11 @@
     &:nth-child(3) {
       animation-name: feed;
     }
+
     &:nth-child(2) {
       --delay: 0.25;
     }
+
     &:nth-child(3) {
       --delay: 0.5;
     }
@@ -40,18 +42,22 @@
       opacity: 0;
       transform: translateX(-500%);
     }
+
     30%,
     70% {
       opacity: 1;
       transform: translateX(0);
     }
+
     50% {
       transform: translateX(0) scale(2.5);
     }
+
     40%,
     60% {
       transform: translateX(0) scale(1.5);
     }
+
     100% {
       opacity: 0;
       transform: translateX(500%);
@@ -63,10 +69,12 @@
       opacity: 0;
       transform: translateX(-500%);
     }
+
     40% {
       opacity: 1;
       transform: translateX(0);
     }
+
     100% {
       opacity: 0;
       transform: translateX(500%);

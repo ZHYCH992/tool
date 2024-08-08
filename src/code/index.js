@@ -18,7 +18,7 @@ function shuffleString(str) {
   }
   return arr.join('');
 }
-function generateRandomString(length = 10, mode = 'all') {
+function generateRandomString({ length = 10, mode = 'all' }) {
   const DIGITS = '0123456789';
   const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
   const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';

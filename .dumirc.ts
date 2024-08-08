@@ -1,8 +1,9 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/tool/' : '/',
-  publicPath: process.env.NODE_ENV === 'production' ? '/tool/' : '/',
+  favicons: ['favicon.ico'],
+  base: process.env.NODE_ENV === 'production' ? '/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/' : '/',
   outputPath: 'docDist',
   themeConfig: {
     name: 'SToolchain',

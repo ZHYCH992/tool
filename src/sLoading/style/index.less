@@ -1,18 +1,19 @@
 @import './../../theme.less';
 @import './flippers.less';
+@import './feeder.less';
+@import './sliding.less';
 
 #zLoading {
+  --background: linear-gradient(135deg,
+      var(--colorPrimary),
+      var(--colorSubPrimary));
   position: absolute;
   inset: 0;
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    135deg,
-    var(--colorPrimary),
-    var(--colorSubPrimary)
-  );
+  background: var(--background);
   transition: opacity 1s ease-in-out;
   &.hiden {
     opacity: 0;

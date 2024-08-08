@@ -32,5 +32,5 @@ debounce({ fn: () => console.log('test'), wait: delay });
 
 | 名称 | 类型     | 默认值 | 说明     |
 | ---- | -------- | ------ | -------- |
-| wait | number   | 100    | 延迟时间 |
+| wait | number   | 1000   | 延迟时间 |
 | fn   | function | -      | 函数     |

@@ -13,7 +13,7 @@ export default function () {
         </Button>
         <Button
           onClick={() => {
-            console.log(element.current === document.body);
+            console.log(element.current);
             sLoading.show({ element: element.current });
           }}
         >

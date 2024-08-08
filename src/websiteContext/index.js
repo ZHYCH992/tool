@@ -1,4 +1,4 @@
-function websiteContext() {
+function webSiteContext() {
   const imgList = document.querySelectorAll('body img');
   let siteId, columnId, path;
 
@@ -26,7 +26,22 @@ function websiteContext() {
     reg(imgList[0].src.split('?')[1]);
   }
 
+  const link = document.querySelectorAll('link');
+  for (let i = 0; i < link.length; i++) {
+    const e = link[i];
+    if (e.href.includes('_upload')) {
+      const lastSlashIndex = e.href.lastIndexOf('/');
+      path = e.href.substring(0, lastSlashIndex + 1);
+      break;
+    }
+  }
+
+  if (document.querySelector('#webSiteContext')) {
+    const ip = window.location.origin;
+    path = i.href.replace(ip, '').replace('favicon.ico', '');
+  }
+
   return { siteId, columnId, path };
 }
 
-export default websiteContext;
+export default webSiteContext;

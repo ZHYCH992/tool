@@ -15,16 +15,13 @@ export default () => {
     // log.current.scrollTo(0, log.current.innerHeight);
   }, []);
   return (
-    <Space direction="vertical" block>
+    <>
       <Space className="buttonBar">
         <Button
           type="primary"
-          onClick={() =>
-            debounce({
-              fn: () => setData([...data, '防抖函数已执行']),
-              wait: delay,
-            })
-          }
+          onClick={debounce({
+            fn: () => setData([...data, '防抖函数已执行']),
+          })}
         >
           防抖函数
         </Button>
@@ -32,11 +29,14 @@ export default () => {
           普通按钮
         </Button>
       </Space>
-      <List ref={log} style={{ height: '300px', overflow: 'auto' }}>
+      <List
+        ref={log}
+        style={{ height: '300px', overflow: 'auto', width: '100%' }}
+      >
         {data.map((item, index) => (
           <List.Item key={index}>{item}</List.Item>
         ))}
       </List>
-    </Space>
+    </>
   );
 };
